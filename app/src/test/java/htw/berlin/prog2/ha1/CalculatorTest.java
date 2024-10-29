@@ -124,7 +124,7 @@ void testSubtraction() {
 
         assertEquals(expected, actual);
     }
-
+//task 2 example
     @Test
     @DisplayName("should display result after calculation the given percentage of the entered number ")
     void testPercentage() {
