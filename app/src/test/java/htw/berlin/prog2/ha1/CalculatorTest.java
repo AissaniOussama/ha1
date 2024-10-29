@@ -107,7 +107,7 @@ void testSubtraction() {
     }
 
     @Test
-    @DisplayName("should display result after subtracting two positive numbers")
+    @DisplayName("should display result after subtracting two positive numbers while prioritizing ")
     void testSubtractionAndMultiply() {
         Calculator calc = new Calculator();
         calc.pressDigitKey(2);
@@ -119,7 +119,7 @@ void testSubtraction() {
         calc.pressDigitKey(2);
         calc.pressEqualsKey();
 
-        String expected = "0";
+        String expected = "20";
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
@@ -129,15 +129,14 @@ void testSubtraction() {
     @DisplayName("should display result after calculation the given percentage of the entered number ")
     void testPercentage() {
         Calculator calc = new Calculator();
-
         calc.pressDigitKey(1);
         calc.pressDigitKey(0);
         calc.pressDigitKey(0);
-        calc.pressBinaryOperationKey("%");
-        String expected = "1";
+        calc.pressUnaryOperationKey("%");
+        String expected = "1.0";
         String actual = calc.readScreen();
-
         assertEquals(expected, actual);
     }
+
 }
 
